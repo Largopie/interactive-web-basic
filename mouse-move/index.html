@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,21 +10,40 @@
         body {
             background-color: #80ebf3;
         }
-        
-        h1{
-            font-size: 50px;
+        h1 {
+            font-size: 30px;
             padding: 30px;
+        }
+        .box {
+            width: 140px;
+            height: 140px;
+            background-color: black;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate( -50%, -50%);
         }
     </style>
     <script>
+        window.onload = () => {
+            const h1 = document.querySelector("h1");
+            const box = document.querySelector(".box");
 
-        window.addEventListener("mousemove", () => {
-            console.log(event.pageY);
-        })
+            console.log(h1);
 
+            window.addEventListener("mousemove", () => {
+                // console.log(event.pageX, event.pageY);
+                h1.innerText = `x : ${event.pageX} y: ${event.pageY}`
+                box.style.top = event.pageY + "px";
+                box.style.left = event.pageX + "px";
+            });
+        }
     </script>
 </head>
+
 <body>
     <h1>test</h1>
+    <div class="box"></div>
 </body>
+
 </html>
