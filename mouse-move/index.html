@@ -9,33 +9,64 @@
     <style>
         body {
             background-color: #80ebf3;
+            height: 300vh;
         }
         h1 {
             font-size: 30px;
             padding: 30px;
         }
         .box {
-            width: 140px;
-            height: 140px;
-            background-color: black;
+            width: 60px;
+            height: 60px;
+            /* background-color: black; */
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate( -50%, -50%);
+            transition: all 1.5s ease-out;
+        }
+
+        .box img {
+            width: 200px;
+        }
+
+        button {
+            padding: 40px 100px;
+            background-color: black;
+            color: #fff;
+            font-size: 30px;
+            transition: all 1.5s ease-in-out;
+        }
+        button:hover {
+            padding: 45px 120px;
+            background-color: rgb(232, 19, 228);
         }
     </style>
     <script>
         window.onload = () => {
             const h1 = document.querySelector("h1");
             const box = document.querySelector(".box");
+            const button = document.querySelector("button");
 
-            console.log(h1);
+            // console.log(h1);
 
-            window.addEventListener("mousemove", () => {
-                // console.log(event.pageX, event.pageY);
-                h1.innerText = `x : ${event.pageX} y: ${event.pageY}`
+            button.addEventListener("mouseenter", () => {
+                console.log(1);
                 box.style.top = event.pageY + "px";
                 box.style.left = event.pageX + "px";
+            });
+
+            window.addEventListener("click", () => {
+                // console.log(event);
+                // console.log(event.pageX, event.pageY);
+                // x = event.pageX;
+                // y = event.pageY;
+
+                // box.style.top = event.pageY + "px";
+                // box.style.left = event.pageX + "px";
+                h1.innerText = `x : ${event.pageX} y: ${event.pageY}`
+                
+                
             });
         }
     </script>
@@ -43,7 +74,12 @@
 
 <body>
     <h1>test</h1>
-    <div class="box"></div>
+    <div class="box">
+        <img src="./butterfly.gif" alt="나비" />
+    </div>
+    <button>
+        버튼
+    </button>
 </body>
 
 </html>
