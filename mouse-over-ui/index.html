@@ -14,32 +14,56 @@
       top: 50%;
       left: 50%;
       transform: translate( -50%, -50%);
-      background-color: red;
-      width: 200px;
+      width: 400px;
     }
     .top {
-      background-color: #fff;
-      padding: 20px;
+      padding: 10px 20px;
+      border: 2px solid #fff;
+      text-align: center;
+      line-height: 10px;
     }
     .bottom {
-      background-color: #4B89DC;
-      padding: 20px;
+      border: 2px solid #4B89DC;
       display: flex;
-      justify-content: space-around;
+      justify-content: space-evenly;
     }
     .bottom a {
       color: #fff;
       text-decoration: none;
+      padding: 20px 0px;
+      width: 50%;
+      text-align: center;
+    }
+    .line {
+      border: 1px solid #4B89DC;
+    }
+    .cursorItem {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+    .circle {
+      position: fixed;
+      width: 120px;
+      height: 120px;
+      background-color: red;
+      border-radius: 50%;
+      margin: -60px -60px;
     }
   </style>
 </head>
 <body>
+  <div class="cursorItem">
+    <span class="circle"></span>
+  </div>
   <div class="gateBox">
     <div class="top">
       <p>마스크를 써야 하나요??</p>
     </div>
     <div class="bottom">
       <a href="#yes">예</a>
+      <span class="line"></span>
       <a href="#no">아니오</a>
     </div>
   </div>
