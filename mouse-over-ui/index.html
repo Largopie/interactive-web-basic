@@ -33,6 +33,11 @@
       padding: 20px 0px;
       width: 50%;
       text-align: center;
+      transition: all 0.3s ease-out;
+    }
+    a:hover {
+      background-color: #4B89DC;
+      color: #000000;
     }
     .line {
       border: 1px solid #4B89DC;
@@ -43,6 +48,7 @@
       left: 0;
       z-index: 1000;
       opacity: 0.5;
+      pointer-events: none;
     }
     .circle {
       position: fixed;
@@ -60,6 +66,18 @@
       const speed = 0.09;
 
       const cursorItem = document.querySelector(".cursorItem");
+      const circle = document.querySelector(".circle");
+      const buttonAll = document.querySelectorAll("a");
+
+      buttonAll.forEach((item) => {
+        // console.log(item);
+        item.addEventListener("mouseenter", () => {
+          circle.style.display = "none";
+        });
+        item.addEventListener("mouseleave", () => {
+          circle.style.display = "block";
+        });
+      });
 
       window.addEventListener("mousemove", (e) => {
         // console.log(e);
@@ -71,6 +89,8 @@
         // cursorItem.style.top = y + "px";
 
       });
+      
+      
 
       const loop = () => {
         // console.log(x, y);
