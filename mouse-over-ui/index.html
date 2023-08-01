@@ -57,6 +57,7 @@
       background-color: #000080;
       border-radius: 50%;
       margin: -60px -60px;
+      transition: all 0.2s ease-in-out;
     }
   </style>
   <script>
@@ -72,10 +73,10 @@
       buttonAll.forEach((item) => {
         // console.log(item);
         item.addEventListener("mouseenter", () => {
-          circle.style.display = "none";
+          circle.style.transform = "scale(.3)";
         });
         item.addEventListener("mouseleave", () => {
-          circle.style.display = "block";
+          circle.style.transform = "scale(1)";
         });
       });
 
