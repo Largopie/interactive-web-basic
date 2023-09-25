@@ -1,14 +1,19 @@
 let x = 0, y = 0;
 
 const contentAll = document.querySelectorAll(".contWrap div");
-console.log(contentAll)
+console.log(contentAll);
 
 window.addEventListener("mousemove", (event) => {
-  console.log(event);
-  x = event.pageX;
-  y = event.paygeY;
+  x = event.pageX - window.innerWidth / 2;
+  y = event.pageY - window.innerHeight / 2;
 
-  contentAll.forEach((item) => {
-    item.style.left = x + "px";
-  })
+  // console.log(y);
+
+  mouseMoveFunc();
 });
+
+const mouseMoveFunc = () => {
+  // contentAll.forEach((item) => {
+  //   item.style.left = x + "px";
+  // });
+};
