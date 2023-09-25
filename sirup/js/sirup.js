@@ -32,7 +32,7 @@ const mouseMoveFunc = () => {
   targetX += (x - targetX) * speed;
   targetY += (y - targetY) * speed;
 
-  shadow.style.transform = `translateX(${targetX / 35}px) translateY(${targetY / 45}px)`;
+  shadow.style.transform = `rotateY(${targetX}deg)`;
   date.style.transform = `translateX(${targetX / 15}px) translateY(${targetY / 25}px)`;
   human.style.transform = `translateX(${-targetX / 30}px) translateY(${-targetY / 40}px`;
   textImg.style.transform = `translateX(${-targetX / 15}px) translateY(${-targetY / 25}px)`;
