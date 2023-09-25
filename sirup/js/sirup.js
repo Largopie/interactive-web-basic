@@ -1,5 +1,9 @@
 let x = 0, y = 0;
 
+let targetX = 0, targetY = 0;
+
+const speed = .1;
+
 
 const contentAll = document.querySelectorAll(".contWrap img");
 
@@ -17,9 +21,7 @@ window.addEventListener("mousemove", (event) => {
   x = event.pageX - window.innerWidth / 2;
   y = event.pageY - window.innerHeight / 2;
 
-  // console.log(y);
-
-  mouseMoveFunc();
+  console.log(x, y);
   
 });
 
@@ -27,11 +29,20 @@ const mouseMoveFunc = () => {
   // contentAll.forEach((item) => {
   //   item.style.left = x + "px";
   // });
+  targetX += (x - targetX) * speed;
+  targetY += (y - targetY) * speed;
 
-  shadow.style.transform = `translateX(${x / 35}px)`;
-  date.style.transform = `translateX(${x / 15}px)`;
-  human.style.transform = `translateX(${-x / 30}px)`;
-  textImg.style.transform = `translateX(${-x / 15}px)`;
+  shadow.style.transform = `translateX(${targetX / 35}px)`;
+  date.style.transform = `translateX(${targetX / 15}px)`;
+  human.style.transform = `translateX(${-targetX / 30}px)`;
+  textImg.style.transform = `translateX(${-targetX / 15}px)`;
+}
+
+const loop = () => {
+  mouseMoveFunc();
+  // mouseMoveYFunc();
+  window.requestAnimationFrame(loop);
 };
 
+loop();
 
