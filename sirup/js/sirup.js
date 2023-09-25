@@ -21,7 +21,7 @@ window.addEventListener("mousemove", (event) => {
   x = event.pageX - window.innerWidth / 2;
   y = event.pageY - window.innerHeight / 2;
 
-  console.log(x, y);
+  // console.log(x, y);
   
 });
 
