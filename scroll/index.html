@@ -21,11 +21,12 @@
 
     h1 {
       position: fixed;
-      left: 30px;
-      bottom: 0px;
-      font-size: 60px;
+      bottom: 40px;
+      font-size: 30px;
       color: #fff;
       line-height: 0;
+      text-align: center;
+      width: 100%;
     }
 
     .innerWrap {
@@ -40,7 +41,17 @@
     }
 
     .textWrap {
-      padding: 500px 30px;
+      padding: 500px 0px;
+    }
+
+    .textWrap p {
+      color: #fff;
+      font-size: 30px;
+      text-align: center;
+    }
+
+    .textWrap img {
+      width: 100%;
     }
 
     .progressWrap {
@@ -67,36 +78,28 @@
   <div class="progressWrap">
     <div class="bar"></div>
   </div>
-  <h1>0m</h1>
+  <h1>0 METERS DEEP</h1>
   <div class="innerWrap">
     <h2 class="title">깊은 바다</h2>
 
     <div class="textWrap">
-      <p>금붕어</p>
-    </div>
-
-    <div class="textWrap">
-      <p>연어</p>
-    </div>
-
-    <div class="textWrap">
-      <p>참다랑어</p>
+      <p>대게</p>
+      <img src="images/crab.png" alt="" />
     </div>
 
     <div class="textWrap">
       <p>오징어</p>
+      <img src="images/cuttle.png" alt="" />
     </div>
 
     <div class="textWrap">
-      <p>문어</p>
+      <p>방어</p>
+      <img src="images/fish_01.png" alt="" />
     </div>
 
     <div class="textWrap">
-      <p>대왕 문어</p>
-    </div>
-
-    <div class="textWrap">
-      <p>심해어</p>
+      <p>미역</p>
+      <img src="images/seaweed.png" alt="" />
     </div>
   </div>
 </body>
@@ -113,7 +116,7 @@
     documentHeight = document.body.scrollHeight - window.innerHeight;
     per = percent(scrollNum, documentHeight) + "%";
 
-    h1.innerText = scrollNum + "m";
+    h1.innerText = scrollNum + " METERS DEEP";
     progressBar.style.width = per;
   });
 
