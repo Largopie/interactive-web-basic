@@ -1,5 +1,6 @@
 const header = document.querySelector("header");
 const progressBar = document.querySelector(".bar");
+const coverTitle = document.querySelector(".coverTitle");
 
 let scrollNum = 0;
 let documentHeight = 0;
@@ -15,9 +16,9 @@ window.addEventListener("scroll", () => {
   if (scrollNum >= 400) {
     header.classList.add("fixed");
   } else {
+    coverTitle.style.top = - scrollNum / 5 + "px";
     header.classList.remove("fixed");
   }
-
 
 })
 
