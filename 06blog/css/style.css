@@ -58,13 +58,19 @@ header.fixed .progressWrap {
   position: fixed;
   top: 0;
   display: flex;
-  flex-direction: column;
   color: #fff;
   align-items: center;
   justify-content: center;
   width: 100%;
   height: 400px;
   background: #000 url("../images/bg.jpg") no-repeat center center / cover;
+}
+
+.dimd {
+  position: absolute;
+  width: 100%;
+  height: inherit;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .coverTitle {

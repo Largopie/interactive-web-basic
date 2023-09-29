@@ -2,6 +2,7 @@ const header = document.querySelector("header");
 const progressBar = document.querySelector(".bar");
 const coverTitle = document.querySelector(".coverTitle");
 const coverWrap = document.querySelector(".coverWrap");
+const dimd = document.querySelector(".dimd");
 
 let scrollNum = 0;
 let documentHeight = 0;
@@ -22,7 +23,7 @@ window.addEventListener("scroll", () => {
   }
 
   coverWrap.style.backgroundPosition = `center ${ -scrollNum / 10 }px`
-
+  dimd.style.backgroundColor = `rgba(0, 0, 0, ${ 0.4 + scrollNum / 700 })`;
 })
 
 const percent = (num, totalNum) => {
