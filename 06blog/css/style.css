@@ -1,0 +1,100 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+header {
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: 1100;
+  width: 100%;
+}
+
+.headerWrap {
+  position: relative;
+  padding: 10px 20px;
+}
+
+.headerWrap h1 {
+  font-size: 15px;
+  color: #fff;
+}
+
+.progressWrap {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: #d0d0d0;
+  display: none;
+}
+
+.bar {
+  width: 0%;
+  height: inherit;
+  position: absolute;
+  z-index: 100;
+  background-color: #000;
+  transition: width .4s ease-out;
+}
+
+header.fixed {
+  position:fixed;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+header.fixed .headerWrap h1 {
+  color: #000;
+}
+
+header.fixed .progressWrap {
+  display: block;
+}
+
+.coverWrap{
+  position: fixed;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 400px;
+  background: #000 url("../images/bg.jpg") no-repeat center center / cover;
+}
+
+.coverTitle {
+  position: relative;
+  text-align: center;
+  z-index: 100;
+}
+
+.coverTitle h1 {
+  color: #fff;
+  line-height: 18px;
+}
+
+.coverTitle p {
+  color: #cecece;
+}
+
+.contentWrap {
+  position: relative;
+  background-color: #fff;
+  z-index: 1000;
+  margin-top: 400px;
+}
+
+.contentInnerWrap {
+  padding: 30px;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+h4 {
+  font-size: 20px;
+}
