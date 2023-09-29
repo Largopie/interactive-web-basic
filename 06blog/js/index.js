@@ -1,6 +1,7 @@
 const header = document.querySelector("header");
 const progressBar = document.querySelector(".bar");
 const coverTitle = document.querySelector(".coverTitle");
+const coverWrap = document.querySelector(".coverWrap");
 
 let scrollNum = 0;
 let documentHeight = 0;
@@ -19,6 +20,8 @@ window.addEventListener("scroll", () => {
     coverTitle.style.top = - scrollNum / 5 + "px";
     header.classList.remove("fixed");
   }
+
+  coverWrap.style.backgroundPosition = `center ${ -scrollNum / 10 }px`
 
 })
 
