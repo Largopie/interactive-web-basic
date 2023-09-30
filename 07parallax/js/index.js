@@ -11,21 +11,23 @@ const speed = .1;
 
 window.addEventListener("scroll", () => {
   scrollNum = window.scrollY;
-  
+
   imageAll.forEach((item, idx) => {
-    item.style.transform = `translateY(${ -scrollNum / (2 * (totalNum -idx))}px)`;
+    if (idx < 4) {
+      item.style.transform = `translateY(${-scrollNum / (2 * (totalNum - idx))}px)`;
+    }
   })
 })
 
 window.addEventListener("mousemove", (e) => {
   x = e.pageX - window.innerWidth / 2;
-  
+
 })
 
 const loop = () => {
-  targetX += (x-targetX) * speed;
-  imageAll[4].style.transform = `scale(1.05) translateX(${-targetX / 50}px)`;
-  imageAll[5].style.transform = `scale(1.05) translateX(${-targetX / 100}px)`;
+  targetX += (x - targetX) * speed;
+  imageAll[4].style.transform = `scale(1.05) translate(${-targetX / 50}px, ${-scrollNum / (2 * (totalNum - 4))}px)`;
+  imageAll[5].style.transform = `scale(1.05) translate(${-targetX / 100}px, ${-scrollNum / (2 * (totalNum - 5))}px)`;
   subPageImage.style.transform = `scale(1.1) translateX(${-targetX / 20}px)`
   window.requestAnimationFrame(loop);
 }
