@@ -26,9 +26,9 @@ window.addEventListener("mousemove", (e) => {
 
 const loop = () => {
   targetX += (x - targetX) * speed;
-  imageAll[4].style.transform = `scale(1.05) translate(${-targetX / 50}px, ${-scrollNum / (2 * (totalNum - 4))}px)`;
-  imageAll[5].style.transform = `scale(1.05) translate(${-targetX / 100}px, ${-scrollNum / (2 * (totalNum - 5))}px)`;
-  subPageImage.style.transform = `scale(1.1) translateX(${-targetX / 20}px)`
+  imageAll[4].style.transform = `scale(1.05) translate(${-targetX / 100}px, ${-scrollNum / (2 * (totalNum - 4))}px)`;
+  imageAll[5].style.transform = `scale(1.05) translate(${-targetX / 30}px, ${-scrollNum / (2 * (totalNum - 5))}px)`;
+  subPageImage.style.transform = `scale(1.1) translateX(${-targetX / 10}px)`
   window.requestAnimationFrame(loop);
 }
 
