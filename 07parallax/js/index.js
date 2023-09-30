@@ -6,6 +6,8 @@ const imageAll = document.querySelectorAll(".imageWrap .parallaxImage");
 const totalNum = imageAll.length;
 const subPageImage = document.querySelector(".subPage .parallaxImage");
 let x = 0;
+let targetX = 0;
+const speed = .1;
 
 window.addEventListener("scroll", () => {
   scrollNum = window.scrollY;
@@ -17,10 +19,16 @@ window.addEventListener("scroll", () => {
 
 window.addEventListener("mousemove", (e) => {
   x = e.pageX - window.innerWidth / 2;
-  imageAll[4].style.transform = `scale(1.05) translateX(${-x / 50}px)`;
-  imageAll[5].style.transform = `scale(1.05) translateX(${-x / 100}px)`;
-  subPageImage.style.transform = `scale(1.1) translateX(${-x / 20}px)`
   
 })
 
+const loop = () => {
+  targetX += (x-targetX) * speed;
+  imageAll[4].style.transform = `scale(1.05) translateX(${-targetX / 50}px)`;
+  imageAll[5].style.transform = `scale(1.05) translateX(${-targetX / 100}px)`;
+  subPageImage.style.transform = `scale(1.1) translateX(${-targetX / 20}px)`
+  window.requestAnimationFrame(loop);
+}
+
+loop();
 
